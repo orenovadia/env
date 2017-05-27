@@ -1,4 +1,7 @@
-#!/bin/bash
+
+# env
+alias ea="vi ~/env/env.sh "
+alias sa="source ~/env/env.sh "
 
 # aliases
 alias cls="clear"
@@ -17,7 +20,4 @@ if [ -f ~/.git-completion.bash ]; then
 fi
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
-# to install fzf: 
-# git clone --depth 1 https://github.com/junegunn/fzf.git ~/.fzf
-# ~/.fzf/install
 
