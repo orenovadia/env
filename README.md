@@ -16,4 +16,4 @@ source ~/env/env.sh
 ## Usage
 
 1. Run things under `~/env/install`
-2. Put local workstation scripts to be sources under `~/env/local/<foo>`
+2. Put local workstation scripts to be sourced under `~/env/local/<foo>`
