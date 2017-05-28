@@ -6,14 +6,12 @@ Working environment setup and customization
 ```
 cd ~
 git clone https://github.com/orenovadia/env.git
+./install.sh
 ```
 
-Add this line to `~/.bashrc`:
-```
-source ~/env/env.sh
-```
+It runs all the installation scripts under `./install/`
+It also adds this `source ~/env/env.sh` to `~/.bashrc`:
 
 ## Usage
 
-1. Run things under `~/env/install`
-2. Put local workstation scripts to be sourced under `~/env/local/<foo>`
+1. Put local workstation scripts to be sourced under `~/env/local/<foo>`
