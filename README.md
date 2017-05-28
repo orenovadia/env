@@ -6,11 +6,11 @@ Working environment setup and customization
 ```
 cd ~
 git clone https://github.com/orenovadia/env.git
-./install.sh
+cd env && ./install.sh
 ```
 
 It runs all the installation scripts under `./install/`
-It also adds this `source ~/env/env.sh` to `~/.bashrc`:
+It also adds `source ~/env/env.sh` to `~/.bashrc`
 
 ## Usage
 
