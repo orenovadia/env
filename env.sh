@@ -55,6 +55,10 @@ if [ -d ~/env/local/ ]; then
   done  
 fi
 
+if [ -f ~/env/per_host/$HOSTNAME ]; then
+  source ~/env/per_host/$HOSTNAME
+fi
+
 # imports
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
