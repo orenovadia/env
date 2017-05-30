@@ -17,6 +17,10 @@ alias del_pyc="find . -name '*pyc' -delete"
 # git
 alias gchange='select i in `git recent`  ; do echo checking out  $i && git checkout $i ; git ss ; break; done'
 
+mgit(){
+for i in `ls -d  */.git  | sed 's/\/\.git//g'`; do echo "For ${i}:"; cd $i; git $@; echo "-----------------"; cd ..; done
+}
+
 garchive() {
 	for branch in "$@"
 	do
