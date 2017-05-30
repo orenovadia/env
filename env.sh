@@ -39,8 +39,8 @@ abs_path(){
 }
 
 # configuration variables
-HISTSIZE=20000
-HISTFILESIZE=20000
+HISTSIZE=10000
+HISTFILESIZE=200000
 
 # appearance
 parse_git_branch() {
