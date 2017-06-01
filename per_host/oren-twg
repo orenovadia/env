@@ -1,0 +1,10 @@
+# environment
+alias sw="cd ~/src/shopymate"
+[[ `hostname` = "oren-twg" ]] && sw
+
+#Working:
+alias modelvalidate="python -m elef.model.cli validate -n"
+alias mq=' python -m elef.cmd_tools '
+alias mc=' python -m elef.model.cli '
+alias gazelle=' python -m modules.gazelle '
+
