@@ -1,8 +1,8 @@
 # environment
-alias sw="cd ~/src/shopymate"
-[[ `hostname` = "oren-twg" ]] && sw
+cd ~/src/shopymate
+alias sw="cd ~/src/shopymate && workon twiggle"
 
-#Working:
+# work
 alias modelvalidate="python -m elef.model.cli validate -n"
 alias mq=' python -m elef.cmd_tools '
 alias mc=' python -m elef.model.cli '
