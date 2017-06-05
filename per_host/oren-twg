@@ -3,7 +3,7 @@ cd ~/src/shopymate
 alias sw="cd ~/src/shopymate && workon twiggle"
 
 # work
-alias modelvalidate="python -m elef.model.cli validate -n"
+alias modelvalidate="python -m elef.model.cli validate "
 alias mq=' python -m elef.cmd_tools '
 alias mc=' python -m elef.model.cli '
 alias gazelle=' python -m modules.gazelle '
