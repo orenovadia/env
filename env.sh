@@ -13,7 +13,7 @@ alias pycharm="/opt/pycharm/bin/pycharm.sh>/dev/null"
 alias csv="column -t -s,"
 alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
-
+alias noti='~/env/scripts/noti'
 
 # git
 alias gchange='select i in `git recent`  ; do echo checking out  $i && git checkout $i ; git ss ; break; done'

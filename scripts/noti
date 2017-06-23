@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+
+# Usages:
+# 
+# 1. Pass a command as a parameter:
+# `noti <command> [parameters...]`
+# This will send a notification when the command ended, e.g:
+# noti sleep 1
+# -> notification: "Done" "sleep 1"
+# 
+# 2. pipe a command: `cat foo | noti`
+# -> notification: "Done" <tail of stdin>
+
+MSG=""
+if [ -z "$*" ] ;
+then
+	# no command provided, lets check stdin:
+	MSG=`tail /dev/fd/0`
+else
+	MSG="'$*'"
+	echo running command ${MSG}
+	$@
+fi
+notify-send -i ~/env/resources/hh.png "Done" "${MSG}"
+
