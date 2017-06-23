@@ -12,6 +12,7 @@ alias json2yaml="ruby -ryaml -rjson -e 'puts JSON.load(ARGF).to_yaml'"
 alias pycharm="/opt/pycharm/bin/pycharm.sh>/dev/null"
 alias csv="column -t -s,"
 alias del_pyc="find . -name '*pyc' -delete"
+alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 
 
 # git
