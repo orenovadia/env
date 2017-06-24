@@ -60,6 +60,8 @@ if [ -f ~/env/per_host/$HOSTNAME ]; then
   source ~/env/per_host/$HOSTNAME
 fi
 
+source ~/env/sources/fzfs.sh
+
 # imports
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
