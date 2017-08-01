@@ -16,7 +16,7 @@ alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
 # git
-alias gchange='select i in `git recent`  ; do echo checking out  $i && git checkout $i ; git ss ; break; done'
+alias gchange='git recent  | fzf | xargs -t --no-run-if-empty git checkout'
 
 mgit(){
 for i in `ls -d  */.git  | sed 's/\/\.git//g'`; do echo "For ${i}:"; cd $i; git $@; echo "-----------------"; cd ..; done
