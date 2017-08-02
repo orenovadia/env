@@ -23,4 +23,5 @@ _grep_fzf  '(?<=class\s)(\b\w+)'
 alias fspy='$(echo fspymethod,fspyclass|tr "," "\n"|fzf --height 10%)'
 bind '"\C-n":"fspyclass\n"'  # Ctrl+n opens `fspyclass`
 bind '"\C-f":"fspymethod\n"' # Ctrl+f opens `pymethod`
+bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
 
