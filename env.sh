@@ -16,7 +16,7 @@ alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
 # git
-alias gchange='git recent  | fzf | xargs -t --no-run-if-empty git checkout'
+alias gchange='git recent  | fzf --height 40% | xargs -t --no-run-if-empty git checkout'
 
 mgit(){
 for i in `ls -d  */.git  | sed 's/\/\.git//g'`; do echo "For ${i}:"; cd $i; git $@; echo "-----------------"; cd ..; done
@@ -61,6 +61,7 @@ if [ -f ~/env/per_host/$HOSTNAME ]; then
 fi
 
 source ~/env/sources/fzfs.sh
+source ~/env/sources/multi_terminal_history.sh
 
 # imports
 if [ -f ~/.git-completion.bash ]; then
