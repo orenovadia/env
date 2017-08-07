@@ -17,4 +17,4 @@ function configure_history_for_multiple_terminals() {
 	return 0
 }
 
-# configure_history_for_multiple_terminals
+configure_history_for_multiple_terminals
