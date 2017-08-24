@@ -7,4 +7,3 @@ alias modelvalidate="python -m elef.model.cli validate "
 alias mq=' python -m elef.cmd_tools '
 alias mc=' python -m elef.model.cli '
 alias gazelle=' python -m modules.gazelle '
-
