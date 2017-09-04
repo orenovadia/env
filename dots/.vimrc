@@ -173,6 +173,9 @@ Plug 'bling/vim-airline'
 Plug 'majutsushi/tagbar'
 " completions
 Plug  'valloric/youcompleteme'
+" syntax highlight
+Plug 'scrooloose/syntastic'
+
 call plug#end()
 
 " Plugin binds
