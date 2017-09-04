@@ -156,3 +156,17 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
  
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+" fzf plugin
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+" git plugin
+Plug 'tpope/vim-fugitive' 
+" fuzzy find with ctrl+p plugin
+Plug 'kien/ctrlp.vim'
+" file tree plugin (`:edit .` or `vi .`)
+Plug 'scrooloose/nerdtree'
+
+call plug#end()
+
