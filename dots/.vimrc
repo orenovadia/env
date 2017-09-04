@@ -166,7 +166,15 @@ Plug 'tpope/vim-fugitive'
 " fuzzy find with ctrl+p plugin
 Plug 'kien/ctrlp.vim'
 " file tree plugin (`:edit .` or `vi .`)
-Plug 'scrooloose/nerdtree'
-
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+" Status line
+Plug 'bling/vim-airline'
+" tag bar:
+Plug 'majutsushi/tagbar'
+" completions
+Plug  'valloric/youcompleteme'
 call plug#end()
 
+" Plugin binds
+nmap <F2> :YcmCompleter GoToDefinition<CR>
+nmap <F7> :YcmCompleter GoToReferences<CR>
