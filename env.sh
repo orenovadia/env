@@ -4,6 +4,10 @@
 alias ea="vi ~/env/env.sh "
 alias sa="source ~/env/env.sh "
 
+# exports
+# vi default editor:
+export EDITOR='vi'  
+
 # aliases
 alias cls="clear"
 alias cb='xclip -sel clip'
