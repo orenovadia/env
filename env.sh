@@ -3,6 +3,7 @@
 # env
 alias ea="vi ~/env/env.sh "
 alias sa="source ~/env/env.sh "
+alias eh="sudo vi /etc/hosts"
 
 # exports
 # vi default editor:
