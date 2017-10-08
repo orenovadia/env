@@ -164,7 +164,7 @@ Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 " git plugin
 Plug 'tpope/vim-fugitive' 
 " fuzzy find with ctrl+p plugin
-Plug 'kien/ctrlp.vim'
+" Plug 'kien/ctrlp.vim'
 " file tree plugin (`:edit .` or `vi .`)
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Status line
@@ -181,3 +181,4 @@ call plug#end()
 " Plugin binds
 nmap <F2> :YcmCompleter GoToDefinition<CR>
 nmap <F7> :YcmCompleter GoToReferences<CR>
+nmap <C-P> :FZF<CR> 
