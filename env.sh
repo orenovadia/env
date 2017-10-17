@@ -41,10 +41,14 @@ garchive() {
 function ap {
    awk -v x=$1 '{print $x}'
 }
-abs_path(){
+function abs_path(){
 	readlink -f $1
 }
 
+function mcd(){
+    mkdir $1
+    cd $1
+}
 # configuration variables
 HISTSIZE=10000
 HISTFILESIZE=200000
