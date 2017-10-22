@@ -156,6 +156,8 @@ map Y y$
 " next search
 nnoremap <C-L> :nohl<CR><C-L>
  
+set tags=~/tags
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
@@ -182,3 +184,4 @@ call plug#end()
 nmap <F2> :YcmCompleter GoToDefinition<CR>
 nmap <F7> :YcmCompleter GoToReferences<CR>
 nmap <C-P> :FZF<CR> 
+
