@@ -26,7 +26,5 @@ bind '"\C-f":"fspymethod\n"' # Ctrl+f opens `pymethod`
 bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
 
 function gitbrowse() {  
-    hash=$(git lgng "$@" |  fzf --ansi | awk '{print $1}')
-    echo $hash | xclip
-    git show $hash
+    git lgng "$@" |  fzf --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
 }
