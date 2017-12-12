@@ -1,3 +1,4 @@
+# Python:
 function _grep_fzf(){ 
 PATTERN=$1
 ref=$( grep  --include '*.py' -o -n  -r -P "${PATTERN}" . \
@@ -23,8 +24,9 @@ _grep_fzf  '(?<=class\s)(\b\w+)'
 alias fspy='$(echo fspymethod,fspyclass|tr "," "\n"|fzf --height 10%)'
 bind '"\C-n":"fspyclass\n"'  # Ctrl+n opens `fspyclass`
 bind '"\C-f":"fspymethod\n"' # Ctrl+f opens `pymethod`
-bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
 
+# Git:
 function gitbrowse() {  
     git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
 }
+bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
