@@ -16,14 +16,13 @@ alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
-# functions
+# bash functions
 function ap {
    awk -v x=$1 '{print $x}'
 }
 function abs_path(){
 	readlink -f $1
 }
-
 function mcd(){
     mkdir $1
     cd $1
@@ -50,8 +49,8 @@ if [ -d ~/env/local/ ]; then
 fi
 
 # per host
-if [ -f ~/env/per_host/$HOSTNAME ]; then
-  source ~/env/per_host/$HOSTNAME
+if [ -f ~/env/per_host/${HOSTNAME} ]; then
+  source ~/env/per_host/${HOSTNAME}
 fi
 
 # source for every machine
@@ -60,8 +59,6 @@ for i in `ls ~/env/sources/` ; do
 done  
 
 # Third party  imports
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
-fi
+[ -f ~/.git-completion.bash ] &&   . ~/.git-completion.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
