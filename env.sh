@@ -5,10 +5,6 @@ alias ea="vi ~/env/env.sh "
 alias sa="source ~/env/env.sh "
 alias eh="sudo vi /etc/hosts"
 
-# exports
-# vi default editor:
-export EDITOR='vi'  
-
 # aliases
 alias cls="clear"
 alias cb='xclip -sel clip'
@@ -19,23 +15,6 @@ alias csv="column -t -s,"
 alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
-
-# git
-alias gchange='git recent  | fzf --height 40% | xargs -t --no-run-if-empty git checkout'
-alias groot='cd `git rev-parse --show-toplevel`'
-
-mgit(){
-for i in `ls -d  */.git  | sed 's/\/\.git//g'`; do echo "For ${i}:"; cd $i; git $@; echo "-----------------"; cd ..; done
-}
-
-garchive() {
-	for branch in "$@"
-	do
-		echo archiving "${branch}"
-		git tag archive/${branch} ${branch}
-		git branch -D ${branch}
-	done
-}
 
 # functions
 function ap {
@@ -49,9 +28,13 @@ function mcd(){
     mkdir $1
     cd $1
 }
+
 # configuration variables
 HISTSIZE=10000
 HISTFILESIZE=200000
+# vi default editor:
+export EDITOR='vi'  
+
 
 # appearance
 parse_git_branch() {
@@ -76,7 +59,7 @@ for i in `ls ~/env/sources/` ; do
     source ~/env/sources/${i}
 done  
 
-# imports
+# Third party  imports
 if [ -f ~/.git-completion.bash ]; then
   . ~/.git-completion.bash
 fi
