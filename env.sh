@@ -61,17 +61,20 @@ PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[0
    
 # local sources
 if [ -d ~/env/local/ ]; then
-  for i in `ls ~/env/local/` ; do 
+  for i in `ls ~/env/local/` ; do
     source ~/env/local/${i}
   done  
 fi
 
+# per host
 if [ -f ~/env/per_host/$HOSTNAME ]; then
   source ~/env/per_host/$HOSTNAME
 fi
 
-source ~/env/sources/fzfs.sh
-source ~/env/sources/multi_terminal_history.sh
+# source for every machine
+for i in `ls ~/env/sources/` ; do
+    source ~/env/sources/${i}
+done  
 
 # imports
 if [ -f ~/.git-completion.bash ]; then
