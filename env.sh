@@ -12,11 +12,14 @@ alias yaml2json="ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF
 alias json2yaml="ruby -ryaml -rjson -e 'puts JSON.load(ARGF).to_yaml'"
 alias pycharm="/opt/pycharm/bin/pycharm.sh>/dev/null"
 alias csv="column -t -s,"
+alias tsv="column -t -s$'\t'"
 alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
+alias tawk="awk -F'\t'"
 # bash functions
+
 function ap {
    awk -v x=$1 '{print $x}'
 }
