@@ -17,11 +17,14 @@ alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
-alias tawk="awk -F'\t'"
+alias tawk="awk -F'\t'  -v OFS='\t'"
 # bash functions
 
 function ap {
    awk -v x=$1 '{print $x}'
+}
+function awksum(){
+   awk '{a+=$1}END{print a}'
 }
 function abs_path(){
 	readlink -f $1

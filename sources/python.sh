@@ -6,6 +6,6 @@ function prun() {
         module=${module//\//.}
         # trailing slash / dot 
         module=${module%.}
-        python -m $module ${@:2}
+        python -m $module "${@:2}"
 }
 
