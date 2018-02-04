@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+# cless: open a less on files, in s3, gs.
+# Unzip if necessary
+# Example usage:
+# cless s3://bucket/foo.tsv
+# cless gs://bucket/foo.tsv.gz
+
+filename=$1
+[ -z ${filename} ] && echo "Must specify filename" && exit 2
+
+unzip_if_needed() {
+    if [[ ${filename}  == *.gz ]] ; 
+    then
+        zcat 
+    else
+        cat
+    fi
+}
+
+read_file(){
+
+    protocol=$(echo ${filename} | python -c 'import sys; from urlparse import urlparse; print(urlparse(sys.stdin.read().strip())).scheme')
+
+    case $protocol in
+      "") cat ${filename} ;;
+      "http") curl -q ${filename} ;;
+      "s3") aws s3 cp ${filename} -  ;;
+      "gs") gsutil cat ${filename} ;;
+          *) echo "Unknown protocol ${protocol} for file ${filename}" && exit 2 ;;
+      esac
+
+}
+
+read_file | unzip_if_needed | less 
