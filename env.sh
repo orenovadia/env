@@ -34,6 +34,9 @@ function mcd(){
     cd $1
 }
 
+# path:
+export PATH="${PATH}:~/env/tools/"
+
 # configuration variables
 HISTSIZE=10000
 HISTFILESIZE=200000
