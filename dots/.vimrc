@@ -177,6 +177,8 @@ Plug 'majutsushi/tagbar'
 Plug  'valloric/youcompleteme'
 " syntax highlight
 Plug 'scrooloose/syntastic'
+" jq syntax highlight
+Plug 'vito-c/jq.vim' 
 
 call plug#end()
 

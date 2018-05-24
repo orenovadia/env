@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# zhead: Show the head of gzipped file[s]
+
+for i in $@; 
+do 
+    echo "------------ $i -------------"
+    zcat $i | head 
+done 
+
+

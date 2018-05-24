@@ -18,6 +18,7 @@ alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 alias noti='~/env/scripts/noti'
 
 alias tawk="awk -F'\t'  -v OFS='\t'"
+alias tabsort="sort -t$'\t' "
 # bash functions
 
 function ap {
