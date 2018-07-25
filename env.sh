@@ -4,6 +4,7 @@
 alias ea="vi ~/env/env.sh "
 alias sa="source ~/env/env.sh "
 alias eh="sudo vi /etc/hosts"
+alias did="vim +'r!date' +$'normal o\t'  ~/did.txt"
 
 # aliases
 alias cls="clear"
