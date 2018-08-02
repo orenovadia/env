@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+notify-send -i ~/env/resources/hh.png "Ping!" "You asked to be pinged"
+
+

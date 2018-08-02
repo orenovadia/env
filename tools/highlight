@@ -1,0 +1,81 @@
+#! /bin/bash
+
+usage() {
+  cat <<__EOF__
+Highlight regexp patterns found on stdin or files specified on command
+line with specified colours or style.
+
+Usage: highlight -f green PASS  
+
+Options:
+	-f color foreground
+        -b color background
+	-s bold
+        -i italics
+Colors:
+    black
+    red
+    green
+    yellow 
+    blue
+    purple 
+    cyan
+    white
+
+Example:
+
+    cat log  | highlight -f green PASS
+
+__EOF__
+  exit 0
+}
+
+
+color_to_num () {
+  case $1 in
+    black)  echo 0;;
+    red)    echo 1;;
+    green)  echo 2;;
+    yellow) echo 3;;
+    blue)   echo 4;;
+    purple) echo 5;;
+    cyan)   echo 6;;
+    white)  echo 7;;
+    *)      echo 0;;
+  esac
+}
+
+# default values for foreground and background colors
+bg=
+fg=
+bold="$(tput bold)"
+italics=""
+boundary=""
+
+while getopts f:b:sli option; do
+  case "$option" in
+    f) fg="$OPTARG";;
+    b) bg="$OPTARG";;
+    s) bold="";;
+    l) boundary=".*";;
+    i) italics="$(tput sitm)";;
+    *) echo 'Unknown option!' ; usage ;;
+  esac
+done
+
+shift $(($OPTIND - 1))
+
+pattern="$*"
+
+if [ -n "$fg" ]; then
+  fg=$(tput setaf $(color_to_num $fg))
+fi
+if [ -n "$bg" ]; then
+  bg=$(tput setab $(color_to_num $bg))
+fi
+
+if [ -z "$fg$bg" ]; then
+  fg=$(tput smso)
+fi
+
+sed "s/${boundary}${pattern}${boundary}/${bold}${italics}${fg}${bg}&$(tput sgr0)/g"
