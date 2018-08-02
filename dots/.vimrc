@@ -158,6 +158,9 @@ nnoremap <C-L> :nohl<CR><C-L>
  
 set tags=~/tags
 
+" https://stackoverflow.com/questions/2514445/turning-off-auto-indent-when-pasting-text-into-vim
+set pastetoggle=<F3>
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 

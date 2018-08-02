@@ -14,6 +14,6 @@ __misc_cmds | fzf --reverse --ansi --height 20%  --with-nth 1 | sed  's,^\w\w*\s
 
 function misc() {
     V=`__misc_choose`
-    echo ${V} 1>&2
+    echo + ${V} 1>&2
     ${V}
 }
