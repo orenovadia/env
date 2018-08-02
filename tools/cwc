@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# cwc: Count lines on files
+# Unzip if necessary
+# Example usage:
+# cwc s3://bucket/foo.tsv
+# cwc gs://bucket/foo.tsv.gz
+
+filename=$1
+[ -z ${filename} ] && echo "Must specify filename" && exit 2
+
+cless ${filename} | tqdm | wc -l 
