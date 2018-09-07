@@ -78,4 +78,4 @@ if [ -z "$fg$bg" ]; then
   fg=$(tput smso)
 fi
 
-sed "s/${boundary}${pattern}${boundary}/${bold}${italics}${fg}${bg}&$(tput sgr0)/g"
+sed "s/${boundary}${pattern}${boundary}/${bold}${italics}${fg}${bg}&$(tput sgr0)/gi"

@@ -21,7 +21,6 @@ _grep_fzf_file_ref  '(?<=def\s)(\b\w+\b)'
 function fspyclass(){
 _grep_fzf  '(?<=class\s)(\b\w+)'
 }
-alias fspy='$(echo fspymethod,fspyclass|tr "," "\n"|fzf --height 10%)'
 bind '"\C-n":"fspyclass\n"'  # Ctrl+n opens `fspyclass`
 bind '"\C-f":"fspymethod\n"' # Ctrl+f opens `pymethod`
 
@@ -30,3 +29,12 @@ function gitbrowse() {
     git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
 }
 bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
+
+function fspyclassreference () 
+{ 
+    ref=$( grep  --include '*.py' -o -r -P "${PATTERN}" .     | fzf --height 40%  -d':' -n1 --with-nth 2 );
+    [[ -z $ref ]] && return;
+    echo $ref |python -c 'import sys; print sys.stdin.read().replace("/", ".").replace(".py:", ".").strip().strip(".")'  
+}
+
+alias fspy='$(echo fspymethod,fspyclass,fspyclassreference |tr "," "\n"|fzf --height 10%)'
