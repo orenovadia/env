@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+# prets: prepend a timestamp to each line in stdin 
+gawk '{ print strftime("[%Y-%m-%d %H:%M:%S]"), $0 }' 
+
+
