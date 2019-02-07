@@ -190,3 +190,9 @@ nmap <F2> :YcmCompleter GoToDefinition<CR>
 nmap <F7> :YcmCompleter GoToReferences<CR>
 nmap <C-P> :FZF<CR> 
 
+" Crosshair: https://github.com/bronson/vim-crosshairs
+:set cursorline    " enable the horizontal line
+:set cursorcolumn  " enable the vertical line
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NON 
+highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
+
