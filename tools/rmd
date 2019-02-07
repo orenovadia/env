@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# read a markdown file in the terminal
+# https://tosbourn.com/view-markdown-files-terminal/
+pandoc $1 | lynx -stdin
