@@ -24,6 +24,7 @@ read_file(){
     case $protocol in
       "") cat ${filename} ;;
       "http") curl -q ${filename} ;;
+      "https") curl -q ${filename} ;;
       "s3") aws s3 cp ${filename} -  ;;
       "gs") gsutil cat ${filename} ;;
           *) echo "Unknown protocol ${protocol} for file ${filename}" && exit 2 ;;

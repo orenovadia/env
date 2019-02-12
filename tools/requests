@@ -1,6 +1,0 @@
-#!/usr/bin/env bash
-
-_HOST=$1
-_PARAM=$2
-
-as_url_param $_HOST $_PARAM | awk '{print "url = " $0}' | curl -v -G -K - 2> errlog | jq -c . | pv -l   > results
