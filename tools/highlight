@@ -1,4 +1,5 @@
-#! /bin/bash
+#!/usr/bin/env bash
+
 
 usage() {
   cat <<__EOF__

@@ -1,3 +1,5 @@
+#!/usr/bin/env bash
+
 # environment
 cd ~/src/shopymate
 alias sw="cd ~/src/shopymate && workon twiggle"
