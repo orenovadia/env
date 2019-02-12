@@ -9,25 +9,8 @@ alias did="vim +'r!date' +$'normal o\t'  ~/did.txt"
 # aliases
 alias cls="clear"
 alias cb='xclip -sel clip'
-alias yaml2json="ruby -ryaml -rjson -e 'puts JSON.pretty_generate(YAML.load(ARGF))'"
-alias json2yaml="ruby -ryaml -rjson -e 'puts JSON.load(ARGF).to_yaml'"
-alias pycharm="/opt/pycharm/bin/pycharm.sh>/dev/null"
-alias csv="column -t -s,"
-alias tsv="column -t -s$'\t'"
-alias del_pyc="find . -name '*pyc' -delete"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
-alias noti='~/env/scripts/noti'
 
-alias tawk="awk -F'\t'  -v OFS='\t'"
-alias tabsort="sort -t$'\t' "
-# bash functions
-
-function ap {
-   awk -v x=$1 '{print $x}'
-}
-function awksum(){
-   awk '{a+=$1}END{print a}'
-}
 function abs_path(){
 	readlink -f $1
 }
@@ -39,7 +22,7 @@ function mcd(){
 # path:
 export PATH="${PATH}:~/env/tools/"
 
-# vi default editor:
+# Make vi default editor:
 export EDITOR='vi'  
 
 
@@ -67,6 +50,6 @@ for i in `ls ~/env/sources/` ; do
 done  
 
 # Third party  imports
-[ -f ~/.git-completion.bash ] &&   . ~/.git-completion.bash
+[ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
