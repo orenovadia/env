@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 function prun() {
         # this function run a python module using python2 by its filename
         # remove .py

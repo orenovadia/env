@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 function __misc_cmds() {
 # simply add here commands where 
 # the first word is the name (and will be omited) 

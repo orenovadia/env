@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 # Python:
 function _grep_fzf(){ 
 PATTERN=$1

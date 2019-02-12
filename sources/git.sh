@@ -1,4 +1,5 @@
-# git
+#!/usr/bin/env bash
+# git aliases
 alias gchange='git recent  | fzf --height 40% | xargs -t --no-run-if-empty git checkout'
 alias groot='cd `git rev-parse --show-toplevel`'
 

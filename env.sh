@@ -39,9 +39,6 @@ function mcd(){
 # path:
 export PATH="${PATH}:~/env/tools/"
 
-# configuration variables
-HISTSIZE=10000
-HISTFILESIZE=200000
 # vi default editor:
 export EDITOR='vi'  
 

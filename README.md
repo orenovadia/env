@@ -10,7 +10,7 @@ cd env && ./install.sh
 ```
 
 It runs all the installation scripts under `./install/`
-It also adds `source ~/env/env.sh` to `~/.bashrc`
+It also adds `source ~/env/env.sh` to `~/.bashrc.sh`
 
 ## Usage
 
