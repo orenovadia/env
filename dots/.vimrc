@@ -166,6 +166,7 @@ call plug#begin('~/.vim/plugged')
 
 " fzf plugin
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " git plugin
 Plug 'tpope/vim-fugitive' 
 " fuzzy find with ctrl+p plugin
@@ -189,6 +190,7 @@ call plug#end()
 nmap <F2> :YcmCompleter GoToDefinition<CR>
 nmap <F7> :YcmCompleter GoToReferences<CR>
 nmap <C-P> :FZF<CR> 
+nmap <C-F> :FZF<CR> 
 
 " Crosshair: https://github.com/bronson/vim-crosshairs
 :set cursorline    " enable the horizontal line
