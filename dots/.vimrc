@@ -177,8 +177,6 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'bling/vim-airline'
 " tag bar:
 Plug 'majutsushi/tagbar'
-" completions
-Plug  'valloric/youcompleteme'
 " syntax highlight
 Plug 'scrooloose/syntastic'
 " jq syntax highlight
@@ -189,6 +187,7 @@ call plug#end()
 " Plugin binds
 nmap <F2> :YcmCompleter GoToDefinition<CR>
 nmap <F7> :YcmCompleter GoToReferences<CR>
+nmap <C-E> :NERDTreeToggle<CR>
 nmap <C-P> :FZF<CR> 
 nmap <C-F> :FZF<CR> 
 
