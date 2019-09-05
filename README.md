@@ -2,6 +2,11 @@
 Working environment setup and customization
 
 ## Installation
+```
+curl https://raw.githubusercontent.com/orenovadia/env/master/get.sh | bash - 
+```
+
+Or:
 
 ```
 cd ~
