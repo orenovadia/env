@@ -1,5 +1,13 @@
 #!/usr/bin/env bash
 
+# Configuration
+if [ $(uname -s) = "Darwin" ]
+then
+    ENV_MAC=true
+else
+    ENV_MAC=false
+fi
+
 # env
 alias ea="vi ~/env/env.sh "
 alias sa="source ~/env/env.sh "
@@ -8,8 +16,19 @@ alias did="vim +'r!date' +$'normal o\t'  ~/did.txt"
 
 # aliases
 alias cls="clear"
-alias cb='xclip -sel clip'
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
+if [ "${ENV_MAC}" = "true" ]
+then
+    function cb()
+    {
+        pbcopy
+    }
+else
+    function cb()
+    {
+        xclip -sel clip
+    }
+fi
 
 function abs_path(){
 	readlink -f $1
@@ -53,3 +72,5 @@ done
 [ -f ~/.git-completion.bash ] && source ~/.git-completion.bash
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 [ -f /usr/local/bin/virtualenvwrapper.sh ] && source /usr/local/bin/virtualenvwrapper.sh
+
+true # do not finish with a non 0 exit code due to above conditions
