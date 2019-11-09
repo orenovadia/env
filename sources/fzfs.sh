@@ -26,9 +26,17 @@ bind '"\C-n":"fspyclass\n"'  # Ctrl+n opens `fspyclass`
 bind '"\C-f":"fspymethod\n"' # Ctrl+f opens `pymethod`
 
 # Git:
-function gitbrowse() {  
-    git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
-}
+
+if [ "${ENV_MAC}" = "true" ]
+then
+    function gitbrowse() {
+        git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | pbcopy  && git show --color=always {1} | less -r  )"
+    }
+else
+    function gitbrowse() {
+        git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
+    }
+fi
 bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
 
 function fspyclassreference () 
