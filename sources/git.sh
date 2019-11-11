@@ -1,6 +1,18 @@
 #!/usr/bin/env bash
 # git aliases
-alias gchange='git recent  | fzf --height 40% | xargs -t --no-run-if-empty git checkout'
+if [ "${ENV_MAC}" = "true" ]
+then
+  function gchange(){
+    local branch=$(git recent  | fzf --height 40%)
+    if [ ! -z "${branch}" ]
+    then
+      git checkout "${branch}"
+    fi
+  }
+else
+  alias gchange='git recent  | fzf --height 40% | xargs -t --no-run-if-empty git checkout'
+fi
+
 alias groot='cd `git rev-parse --show-toplevel`'
 
 mgit(){
