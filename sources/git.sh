@@ -14,6 +14,7 @@ else
 fi
 
 alias groot='cd `git rev-parse --show-toplevel`'
+alias gshort-commit='git rev-parse --short HEAD | cb && git rev-parse --short HEAD && echo "Copied to clipboard"'
 
 mgit(){
 for i in `ls -d  */.git  | sed 's/\/\.git//g'`; do echo "For ${i}:"; cd $i; git $@; echo "-----------------"; cd ..; done
