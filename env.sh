@@ -23,16 +23,21 @@ then
     {
         pbcopy
     }
+    function abs_path(){
+            # (requires `brew install coreutils`)
+            greadlink -f $1
+    }
 else
     function cb()
     {
         xclip -sel clip
     }
+
+    function abs_path(){
+            readlink -f $1
+    }
 fi
 
-function abs_path(){
-	readlink -f $1
-}
 function mcd(){
     mkdir $1
     cd $1
