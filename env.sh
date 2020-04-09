@@ -44,8 +44,14 @@ function mcd(){
 }
 
 # path:
-export PATH="${PATH}:~/env/tools/"
+append_to_path () {
+  if ! echo "$PATH" | grep -Eq "(^|:)$1($|:)" ; then
+    export PATH="$PATH:$1"
+  fi
+}
 
+
+append_to_path "$HOME/env/tools/"
 # Make vi default editor:
 export EDITOR='vi'  
 
