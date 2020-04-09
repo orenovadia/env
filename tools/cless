@@ -4,7 +4,6 @@
 # Example usage:
 # cless s3://bucket/foo.tsv
 # cless gs://bucket/foo.tsv.gz
-
 filename=$1
 [ -z ${filename} ] && echo "Must specify filename" && exit 2
 
@@ -19,7 +18,15 @@ unzip_if_needed() {
 
 read_file(){
 
-    protocol=$(echo ${filename} | python -c 'import sys; from urlparse import urlparse; print(urlparse(sys.stdin.read().strip())).scheme')
+    protocol=$(echo ${filename} | python -c '
+import sys
+try:
+  from urlparse import urlparse
+except ImportError: # py3
+  from urllib.parse import urlparse
+parsed = urlparse(sys.stdin.read().strip())
+print(parsed.scheme)
+')
 
     case $protocol in
       "") cat ${filename} ;;

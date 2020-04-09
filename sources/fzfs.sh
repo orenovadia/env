@@ -38,6 +38,8 @@ else
     }
 fi
 bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
+bind '"\C-g":"gchange\n"' # Ctrl+g opens changes git branch
+
 
 function fspyclassreference () 
 { 
