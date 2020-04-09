@@ -51,7 +51,7 @@ append_to_path () {
 }
 
 
-append_to_path "$HOME/env/tools/"
+append_to_path "~/env/tools/"
 # Make vi default editor:
 export EDITOR='vi'  
 
