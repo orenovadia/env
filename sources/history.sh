@@ -22,7 +22,8 @@ function configure_history_for_multiple_terminals() {
 	# multiple x terminals or systems like screen or tmux
 	# References:
 	# - https://askubuntu.com/questions/80371/bash-history-handling-with-multiple-terminals
-	if [ -n "${PROMPT_COMMAND}" ]
+	[[ "${PROMPT_COMMAND}" =~ "history" ]] && return # we are already configured
+        if [ -n "${PROMPT_COMMAND}" ]
 	then
 		export PROMPT_COMMAND="history -a; history -n; $PROMPT_COMMAND"
 	else
