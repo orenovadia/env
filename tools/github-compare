@@ -1,0 +1,17 @@
+# Opens a compare page on github for all the commits between the branch <from> to <to>
+# note that branches are compared in origin and therfore need to be pushed
+# usage:
+# github-compare <base branch> <my branch>
+#  for instance:
+# github-compare master my-feature
+
+set -eu
+FROM=$1
+TO=$2
+echo "Changes done from ${FROM} to ${TO}"
+
+BASE_COMPARE_URL=$(git remote get-url --push origin |tr ':' '/' |sed -E -e 's,git@,,' -e 's,\.git,/compare,')
+COMPARE="https://${BASE_COMPARE_URL}/${FROM}...${TO}"
+echo ${COMPARE}
+open ${COMPARE}
+
