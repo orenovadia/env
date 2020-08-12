@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 # git aliases
+
+is_in_git_repo() {
+  git rev-parse HEAD > /dev/null 2>&1
+}
+
 if [ "${ENV_MAC}" = "true" ]
 then
   function gchange(){
@@ -28,3 +33,13 @@ garchive() {
 		git branch -D ${branch}
 	done
 }
+
+function _branch_completion () {
+  is_in_git_repo || return 1
+  FZF_COMPLETION_OPTS=("--preview-window right:70% --preview 'git lgs --color=always {}'")
+  FZF_COMPLETION_TRIGGER='@' _fzf_complete  \
+       < <(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' );
+}
+
+# For this to work propertly, you might have to remove 'git' from the default fzf completions script
+complete -o nospace -o default -o bashdefault -F _branch_completion git
