@@ -10,6 +10,10 @@ function awksum(){
    awk '{a+=$1}END{print a}'
 }
 
+function awkavg (){     
+    awk '{a+=$1;c++}END{print a/c,"count",c}'; 
+}
+
 #Working with CSV:
 alias csv="column -t -s,"
 
