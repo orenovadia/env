@@ -4,7 +4,7 @@
 # Example usage:
 # cless s3://bucket/foo.tsv
 # cless gs://bucket/foo.tsv.gz
-filename=$1
+filename="$1"
 [ -z ${filename} ] && echo "Must specify filename" && exit 2
 
 unzip_if_needed() {
@@ -29,11 +29,11 @@ print(parsed.scheme)
 ')
 
     case $protocol in
-      "") cat ${filename} ;;
-      "http") curl -q ${filename} ;;
-      "https") curl -q ${filename} ;;
-      "s3") aws s3 cp ${filename} -  ;;
-      "gs") gsutil cat ${filename} ;;
+      "") cat "${filename}" ;;
+      "http") curl -q "${filename}" ;;
+      "https") curl -q "${filename}" ;;
+      "s3") aws s3 cp "${filename}" -  ;;
+      "gs") gsutil cat "${filename}" ;;
           *) echo "Unknown protocol ${protocol} for file ${filename}" && exit 2 ;;
       esac
 

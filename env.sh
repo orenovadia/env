@@ -28,6 +28,8 @@ then
             # (requires `brew install coreutils`)
             greadlink -f $1
     }
+    export GREP_OPTIONS=--color=auto
+    export BASH_SILENCE_DEPRECATION_WARNING=1
 else
     function cb()
     {
