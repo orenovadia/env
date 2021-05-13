@@ -22,7 +22,6 @@ else
         git lgng "$@" |  fzf --reverse --ansi --bind "ctrl-m:execute: (echo {1} | xclip && git show --color=always {1} | less -r  )"
     }
 fi
-bind '"\C-b":"gchange\n"' # Ctrl+b opens changes git branch
 bind '"\C-g":"gchange\n"' # Ctrl+g opens changes git branch
 
 
