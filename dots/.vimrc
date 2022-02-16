@@ -181,6 +181,8 @@ Plug 'majutsushi/tagbar'
 Plug 'scrooloose/syntastic'
 " jq syntax highlight
 Plug 'vito-c/jq.vim' 
+Plug 'ruanyl/vim-gh-line'
+
 
 call plug#end()
 
