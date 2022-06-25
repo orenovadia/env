@@ -168,7 +168,9 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " git plugin
-Plug 'tpope/vim-fugitive' 
+"Plug 'tpope/vim-fugitive' 
+"commented out because it errors
+
 " fuzzy find with ctrl+p plugin
 " Plug 'kien/ctrlp.vim'
 " file tree plugin (`:edit .` or `vi .`)
@@ -182,7 +184,6 @@ Plug 'scrooloose/syntastic'
 " jq syntax highlight
 Plug 'vito-c/jq.vim' 
 Plug 'ruanyl/vim-gh-line'
-
 
 call plug#end()
 
