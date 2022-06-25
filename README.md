@@ -21,3 +21,4 @@ It sets `~/.bashrc.sh` to `source ~/env/env.sh`
 
 1. Put local workstation scripts to be sourced under `~/env/per_host/${HOSTNAME}`
 2. Put local unversioned scripts to be sourced under `~/env/local/`
+
