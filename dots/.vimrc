@@ -168,7 +168,7 @@ call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
 " git plugin
-"Plug 'tpope/vim-fugitive' 
+Plug 'tpope/vim-fugitive'
 "commented out because it errors
 
 " fuzzy find with ctrl+p plugin

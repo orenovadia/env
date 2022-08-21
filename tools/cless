@@ -39,4 +39,4 @@ print(parsed.scheme)
 
 }
 
-read_file | unzip_if_needed | less 
+read_file | unzip_if_needed | less -S
