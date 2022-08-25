@@ -4,11 +4,19 @@ for i in `ls install`; do
    ./install/${i}
 done
 
-if ! grep --quiet '~/env/env.sh' ~/.bashrc
+# Configuration
+if [ $(uname -s) = "Darwin" ]
 then
-    echo "Adding source to bashrc.sh"
-    cp ~/.bashrc  ~/.bashrc_backup
-    echo "source ~/env/env.sh" > ~/.bashrc
+    RC_FILE=~/.bash_profile
+else
+    RC_FILE=~/.bashrc
+fi
+
+if ! grep --quiet '~/env/env.sh' ${RC_FILE}
+then
+    echo "Adding source to rc file: ${RC_FILE}"
+    cp ${RC_FILE}  ~/.bashrc_backup || true # do not care if fails
+    echo "source ~/env/env.sh" > ${RC_FILE}
 else
     echo "bashrc is sourcing us, no need to do anything"
 fi

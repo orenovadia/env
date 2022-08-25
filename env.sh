@@ -72,7 +72,7 @@ PS1='$(__E=$? ; if [ $__E == 0 ]; then true; else echo "(exit:$__E) "; fi)${debi
 
 # local sources
 if [ -d ~/env/local/ ]; then
-  for i in `ls ~/env/local/` ; do
+  for i in `ls ~/env/local/ | sort` ; do
     source ~/env/local/${i}
   done  
 fi
@@ -87,4 +87,11 @@ for i in `ls ~/env/sources/` ; do
     source ~/env/sources/${i}
 done  
 
+
+if [ -z "$TMUX" ]
+then
+    tmux attach -t TMUX || tmux new -s TMUX
+fi
+
 true # do not finish with a non 0 exit code due to above conditions
+
