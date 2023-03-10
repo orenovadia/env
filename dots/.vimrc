@@ -197,6 +197,6 @@ nmap <C-F> :FZF<CR>
 " Crosshair: https://github.com/bronson/vim-crosshairs
 :set cursorline    " enable the horizontal line
 :set cursorcolumn  " enable the vertical line
-highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NON 
+highlight CursorLine   cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 highlight CursorColumn cterm=NONE ctermbg=black ctermfg=NONE guibg=black guifg=NONE
 
