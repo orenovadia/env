@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$1" = "kill" ]; then
+  echo "The first argument is 'kill', killing and removing container"
+  docker rm -f my_notebook
+else
+    echo Running docker image: jupyter/scipy-notebook
+    echo "The first argument != 'kill', running server (run 'jupyter-server kill' to kill it)"
+    docker run -d -v  ~/jupyter_workspace:/home/jovyan/work --name my_notebook   -e JUPYTER_TOKEN=foo  -p 8888:8888  jupyter/scipy-notebook
+    echo Waiting to start
+    sleep 5
+    open http://localhost:8888/?token=foo
+fi
+
