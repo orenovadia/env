@@ -8,12 +8,10 @@
 #
 #   repo -b another-branch -f app/controllers/application_controller.rb
 
-if [ -d .git ]; then
+if git rev-parse --show-toplevel > /dev/null 2>&1; then
   echo "Opening on Github..."
 
-  # Set the default branch to current branch instead of 'master'
-  # BRANCH=$(git rev-parse --abbrev-ref HEAD)
-  BRANCH='master'
+  BRANCH=$(git rev-parse --abbrev-ref HEAD)
 
   while getopts ":b:f:" option
   do
@@ -23,8 +21,14 @@ if [ -d .git ]; then
     esac
   done
 
+  # Get the repository root directory
+  REPO_ROOT=$(git rev-parse --show-toplevel)
+
+  # **Changed**: Use git ls-files to get the relative path
+  RELATIVE_FILEPATH=$(git ls-files --full-name "$FILEPATH")
+
   BASE=$(git config --get remote.origin.url | sed s/\\.git// | sed 's/:/\//' | sed 's/.*github.com/https:\/\/github.com/')
-  URL="$BASE/blob/$BRANCH/$FILEPATH"
+  URL="$BASE/blob/$BRANCH/$RELATIVE_FILEPATH"
 
   if which xdg-open > /dev/null
   then
