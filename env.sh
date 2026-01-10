@@ -30,6 +30,10 @@ then
     }
     export GREP_OPTIONS=--color=auto
     export BASH_SILENCE_DEPRECATION_WARNING=1
+    # Add brew's bash completion
+    if [ -f "$(brew --prefix)/etc/bash_completion" ]; then
+       . "$(brew --prefix)/etc/bash_completion" 2>/dev/null || true
+    fi
 else
     function cb()
     {

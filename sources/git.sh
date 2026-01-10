@@ -41,5 +41,7 @@ function _branch_completion () {
        < <(git for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short)' );
 }
 
-# For this to work propertly, you might have to remove 'git' from the default fzf completions script
-complete -o nospace -o default -o bashdefault -F _branch_completion git
+# Note: The default git completion is loaded from ~/.git-completion.bash
+# If you want to use '@' trigger for branch completion with fzf, you can
+# create a custom completion for specific git commands, but we don't override
+# the main 'git' completion here to preserve all git completions.
