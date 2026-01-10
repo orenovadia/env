@@ -16,7 +16,7 @@ case "$1" in
   *)
     echo Running docker image: jupyter/scipy-notebook, mounted ~/jupyter_workspace into the container
     echo "The first argument != 'kill', running server (run 'jupyter-server kill' to kill it)"
-    docker run -d -v  ~/jupyter_workspace:/home/jovyan/ --name my_notebook -e JUPYTER_TOKEN=foo  -p 8888:8888  jupyter/scipy-notebook
+    docker run -d -v  ~/jupyter_workspace:/home/jovyan/ --name my_notebook -e JUPYTER_TOKEN=foo  -p 8888:8888 jupyter/scipy-notebook
     echo Waiting to start
     sleep 1
     open http://localhost:8888/?token=foo
