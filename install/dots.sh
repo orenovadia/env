@@ -5,6 +5,8 @@ ln -f  -s ~/env/dots/.vimrc ~/.vimrc
 ln -f  -s ~/env/dots/.psqlrc ~/.psqlrc
 ln -f  -s ~/env/dots/.tmux.conf  ~/.tmux.conf
 
+ln -f  -s ~/env/dots/.bazelrc ~/.bazelrc
+
 # not in home dir
 mkdir -p ~/.config/htop/ || true
 ln -f -s ~/env/dots/htoprc ~/.config/htop/htoprc

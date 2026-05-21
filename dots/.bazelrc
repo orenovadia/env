@@ -1,0 +1,2 @@
+common --repository_cache=/Users/oren.ovadia/Library/Caches/bazel/repository_cache
+build --disk_cache=/Users/oren.ovadia/Library/Caches/bazel/disk_cache
