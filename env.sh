@@ -92,10 +92,10 @@ for i in `ls ~/env/sources/` ; do
 done  
 
 
-if [ -z "$TMUX" ]
-then
-    tmux attach -t TMUX || tmux new -s TMUX
-fi
+# if [ -z "$TMUX" ]
+# then
+#     tmux attach -t TMUX || tmux new -s TMUX
+# fi
 
 true # do not finish with a non 0 exit code due to above conditions
 
