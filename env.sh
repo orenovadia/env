@@ -17,6 +17,7 @@ alias todo="vi ~/todo.txt"
 
 # aliases
 alias cls="clear"
+alias agent="cursor-agent"
 alias beep='paplay /usr/share/sounds/ubuntu/ringtones/Harmonics.ogg'
 if [ "${ENV_MAC}" = "true" ]
 then
@@ -25,8 +26,12 @@ then
         pbcopy
     }
     function abs_path(){
-            # (requires `brew install coreutils`)
-            greadlink -f $1
+            # Prefer greadlink (brew install coreutils); fall back to python.
+            if command -v greadlink >/dev/null 2>&1; then
+                greadlink -f "$1"
+            else
+                python3 -c 'import os,sys; print(os.path.realpath(sys.argv[1]))' "$1"
+            fi
     }
     export GREP_OPTIONS=--color=auto
     export BASH_SILENCE_DEPRECATION_WARNING=1
